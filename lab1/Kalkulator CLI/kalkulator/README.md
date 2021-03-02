@@ -283,3 +283,9 @@ class App extends Component{
 export default App;
 ```
 
+## Tak przedstawia się wynik obliczenia z wybranej operacji
+![](2)
+
+## Tak przedstawia się Gif na którym wykonywane są różne operacje:
+![](3)
+

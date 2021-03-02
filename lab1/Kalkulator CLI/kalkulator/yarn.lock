@@ -5603,6 +5603,11 @@ react-test-renderer@16.13.1:
     react-is "^16.8.6"
     scheduler "^0.19.1"
 
+react-with-important-style@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/react-with-important-style/-/react-with-important-style-0.2.2.tgz#8b685fe5dcddb838707dcca7d1b27e24826f6b66"
+  integrity sha1-i2hf5dzduDhwfcyn0bJ+JIJva2Y=
+
 react@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"

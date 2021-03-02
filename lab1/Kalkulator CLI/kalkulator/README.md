@@ -4,7 +4,7 @@
 ## Po końcowej konfiguracji przeszedłem do realizacji zadania.
 
 ## Tak przedstawia się gotowa aplikacja:
-![](1)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab1/zrzuty/1.PNG)
 
 ## Aplikacje podzieliłem na 2 pliki: **style.js** do stylów oraz **app.js** z całą logiką.
 
@@ -284,8 +284,8 @@ export default App;
 ```
 
 ## Tak przedstawia się wynik obliczenia z wybranej operacji
-![](2)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab2/zrzuty)
 
 ## Tak przedstawia się Gif na którym wykonywane są różne operacje:
-![](3)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab1/zrzuty/gif.gif)
 

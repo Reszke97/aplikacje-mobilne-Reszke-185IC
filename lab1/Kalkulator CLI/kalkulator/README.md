@@ -10,7 +10,7 @@
 
 ## Tak przedstawia się plik **style.js**:
 
-```React-native
+```React
 import React, { Component } from 'react';
 import {View, Text, StyleSheet,TouchableOpacity, Button } from 'react-native';
 

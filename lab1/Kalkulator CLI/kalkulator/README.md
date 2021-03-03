@@ -284,7 +284,7 @@ export default App;
 ```
 
 ## Tak przedstawia się wynik obliczenia z wybranej operacji
-![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab2/zrzuty)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab1/zrzuty/2.PNG)
 
 ## Tak przedstawia się Gif na którym wykonywane są różne operacje:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab1/zrzuty/gif.gif)

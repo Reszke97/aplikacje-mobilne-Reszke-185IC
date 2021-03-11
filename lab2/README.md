@@ -95,10 +95,10 @@ import stylesHome from '../static/styles.js';
 // do funkcji w propsie przekazany obiekt 
 export default function HomeScreen({ navigation }) {
     return (
-                                                // we View przekazuje do stylów gotowy zaimportowany obiekt z pliku styles.js
+                    // we View przekazuje do stylów gotowy zaimportowany obiekt z pliku styles.js
       <View style={stylesHome.containerCol}>
-                                                // W parametrze onPress za pomocą propu navigation.navigate dostępnego w ReactNavigate możemy podać dokąd po kliknięciu
-                                                // w guzik ma nas zabrać i podajemy ten sam name zdefiniowany za pomocą Stack.Screen (Stack = createStackNavigator());
+                    // W parametrze onPress za pomocą propu navigation.navigate dostępnego w ReactNavigate możemy podać dokąd po kliknięciu
+                    // w guzik ma nas zabrać i podajemy ten sam name zdefiniowany za pomocą Stack.Screen (Stack = createStackNavigator());
         <TouchableOpacity style={stylesHome.colItems} onPress={() => navigation.navigate('RestParameters')}>
           <Text style={stylesHome.text}>Rest Parameters</Text>
         </TouchableOpacity>
@@ -160,9 +160,9 @@ const stylesHome = StyleSheet.create({
     }
 })
 
-                                                          // Tutaj tworze style dla pozostałych widoków
-                                                          //Niektóre ze stylów są takie same dla wszystkich komponentów te które nie są, 
-                                                          //mają w nazwie nazwe komponentu, do którego należą.
+                                              // Tutaj tworze style dla pozostałych widoków
+                                              //Niektóre ze stylów są takie same dla wszystkich komponentów te które nie są, 
+                                              //mają w nazwie nazwe komponentu, do którego należą.
 export const stylesOtherScreens = StyleSheet.create({
   containerCol: {
     flex: 1,
@@ -302,14 +302,14 @@ import * as React from 'react';
 import { View, Text,Button, TouchableOpacity } from 'react-native';
 import {stylesOtherScreens} from '../static/styles.js';
 
-                                                    // Generalnie każdy z kompunentów ma taką samą strukturę tj.
-                                                    // Główny View ustalony na flex direction column z parametrami
-                                                    // justifyContent:'space-around',alignItems:'center', flexDirection:'column',
-                                                    // tak aby elementy wewnątrz były wycentrowane oraz była między nimi przerwa
-                                                    // Następnie tworze dwa widoki. Pierwszy ustawiony jest na 80% kontenera i wyświetlany za pomocą
-                                                    // flex direction column.Wewnątrz niego znajduję się blok tekstu, który wyświetla się jako 
-                                                    // kod na ekranie i jest jakby osobnym blokiem.
-                                                    // Drugi ustawiony na 20% ekranu i wyświetlany za pomocą flex direction row. A wnim są buttony nawigacyjne
+                                // Generalnie każdy z kompunentów ma taką samą strukturę tj.
+                                // Główny View ustalony na flex direction column z parametrami
+                                // justifyContent:'space-around',alignItems:'center', flexDirection:'column',
+                                // tak aby elementy wewnątrz były wycentrowane oraz była między nimi przerwa
+                                // Następnie tworze dwa widoki. Pierwszy ustawiony jest na 80% kontenera i wyświetlany za pomocą
+                                // flex direction column.Wewnątrz niego znajduję się blok tekstu, który wyświetla się jako 
+                                // kod na ekranie i jest jakby osobnym blokiem.
+                                // Drugi ustawiony na 20% ekranu i wyświetlany za pomocą flex direction row. A wnim są buttony nawigacyjne
 export default function HookUseState({ navigation }) {
   const B = (props) => <Text style={{fontWeight: 'bold',color:'black'}}>{props.children}</Text>
     return (
@@ -469,7 +469,6 @@ export const options ={
   },
 }
 ```
-# Widoki Aplikaci:
 
 ## Widok HomeScreen:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab2/zrzuty/1.PNG)

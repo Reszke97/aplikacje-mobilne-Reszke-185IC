@@ -320,8 +320,10 @@ export default function HookUseState({ navigation }) {
             Use State hook pozwala nam manipulować stanami w komponencie funkcyjnym.
           </Text>
           <Text style={stylesOtherScreens.textHookUseState}>
-            Najpierw podajemy zmienną, która będzie odpowiadać za stan komponentu a następnie podajemy która będzie wywoływać <B>setState </B>
-            czyli wywoła funkcję <B>render</B> która w konsekwencji zmieni stan naszego komponentu.
+            Najpierw podajemy zmienną, która będzie odpowiadać za stan komponentu a 
+            następnie podajemy która będzie wywoływać <B>setState </B>
+            czyli wywoła funkcję <B>render</B> która w konsekwencji 
+            zmieni stan naszego komponentu.
           </Text>
           <Text style={stylesOtherScreens.textHookUseState}>
             <B>Przykład</B>
@@ -374,7 +376,8 @@ export default function RestParameters({ navigation }) {
     <View style={stylesOtherScreens.containerCol}>
         <View style={stylesOtherScreens.colTextRestParams}>
           <Text style={stylesOtherScreens.textRestParameters}>
-          <B>Rest Parameters</B> pozwala funkcji na akceptowanie nieokreślonej liczby argumentów jako tablicy, zapewniając sposób reprezentowania funkcji wariadycznych(czyli o zmiennej liczbie argumentów) w JavaScript.
+          <B>Rest Parameters</B> pozwala funkcji na akceptowanie nieokreślonej liczby argumentów jako tablicy, 
+          zapewniając sposób reprezentowania funkcji wariadycznych(czyli o zmiennej liczbie argumentów) w JavaScript.
           </Text>
           <Text style={stylesOtherScreens.textRestParameters}>
             Gdy ostatni parametr w funkcji poprzedzimy zapisem <B>'...'</B> to pozostałe parametry zostaną wpisane do tablicy JS.

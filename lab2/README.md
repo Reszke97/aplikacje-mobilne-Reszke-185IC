@@ -472,13 +472,13 @@ export const options ={
 # Widoki Aplikaci:
 
 ## Widok HomeScreen:
-![]()
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab2/zrzuty/1.PNG)
 
 ## Widok SpreadOperator:
-![]()
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab2/zrzuty/3.PNG)
 
 ## Widok RestParameters:
-![]()
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab2/zrzuty/2.PNG)
 
 ## Widok HookUseState:
-![]()
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab2/zrzuty/4.PNG)

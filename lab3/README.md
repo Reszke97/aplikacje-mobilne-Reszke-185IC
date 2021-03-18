@@ -450,16 +450,28 @@ export default stylesHome
 # Widoki
 
 ## Tak przedstawia się widok **Home**
-![](1)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/1.PNG)
 
 ## Tak przedstawia się widok **LazyLoading** w trakcie ładowania:
-![](2)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/2.PNG)
 
 ## Tak przedstawia się widok **LazyLoading** po załadowaniu:
-![](3)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/3.PNG)
 
 ## Tak przedstawia się pierwszy ekran **StepProgressBar**:
-![](4)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/11.PNG)
 
 ## Tak przedstawia się drugi ekran **StepProgressBar**:
-![](5)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/5.PNG)
+
+## Tak przedstawia się trzeci ekran **StepProgressBar**:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/10.PNG)
+
+## Tak przedstawia się ekran **SortFilter** po załadowaniu:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/7.PNG)
+
+## Tak przedstawia się ekran **SortFilter** po kliknięciu **randomizuj**:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/8.PNG)
+
+## Tak przedstawia się ekran **SortFiler** po kliknięciu **sortuj**:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab3/zrzuty/9.PNG)

@@ -156,7 +156,7 @@ import { View, Text,Button, TouchableOpacity } from 'react-native';
 import {stylesOtherScreens} from '../static/styles.js';
 import { useNavigation } from '@react-navigation/native';
 
-
+// Należy zaimportować Suspense z Reacta następnie za pomocą metody lazy() importujemy komponent który będziemy ładować przy pomocy lazy loading
 const LazyComponent = React.lazy(()=> import('./ComponentToBeLoaded'));
 
 export default function LazyLoading() {
@@ -167,7 +167,9 @@ export default function LazyLoading() {
         <Text style={{textAlign:'center',fontFamily:'Roboto-Medium',fontSize:20,paddingTop:10,paddingHorizontal:10}}>Hello this is The component that will call another component           with lazy loading
         </Text>
       </View>
+      // Do tego widoku załadowany zostanie komponent za pomocą lazy loading
       <View style={{margin:10,fontFamily:'SourceSerifPro-Light'}}>
+        // Aby pokazać Loading ustawiłem ilość obrotów w pętli na 50 tys.
         <Suspense fallback = {<Text>Loading</Text>}>
           <LazyComponent length = {50000} />
         </Suspense>
@@ -191,6 +193,7 @@ export default function ComponentToBeLoaded({length}){
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return(
+        // Należało wykorzystać ScrollView zamiast zwykłego View aby można było scrollować
         <ScrollView>
             <Text>{result}</Text>
         </ScrollView>
@@ -201,6 +204,9 @@ export default function ComponentToBeLoaded({length}){
 ```js
 import * as React from 'react';
 import { View, Text,Button, TouchableOpacity } from 'react-native';
+
+// Są to opcje dla StackNavigatora. Należało przekazać je za pomocą funkcji która przyjmuje navigation jako props
+// W celu podczepienia nawigacji w Headerze do onClick na buttonie
 export default({navigation}) => ({ // get reference to navigation
     title: 'Lazy Loading',
     headerTitleAlign: 'center',
@@ -234,6 +240,7 @@ import {stylesOtherScreens} from '../static/styles.js';
 import { useNavigation } from '@react-navigation/native';
 import {listStyles} from '../static/styles.js';
 
+// Wykorzystując StackNavigatora przy komponencie klasowym należało owrapować go w komponent funkcyjny i zastosować metodę useNavigation
 export default function(props) {
   const navigation = useNavigation();
   return <SortFilter {...props} navigation={navigation} />;
@@ -248,9 +255,11 @@ export class SortFilter extends Component{
     this.state = {
       array: new Array(100).fill(10).map((v, i) => ({ key: i.toString(), value: `${v}` })),
     }
+    // tablica liczb na której sortuje, generuje oraz mapuje dane na listę
     this._array = new Array(100).fill(10);
   }
 
+  //funkcja odpowiedzialna za generowanie liczb pseudolosowych
   Randomize(event) {
     for(let i = 0; i<100;i++){
       this._array[i] = (Math.floor(Math.random() * 1000)+1);
@@ -261,6 +270,7 @@ export class SortFilter extends Component{
     })
   }
 
+  //funkcja sortująca
   Sort(event){
     this._array.sort((a,b) => a > b ? 1:-1)
     this.setState({
@@ -312,18 +322,21 @@ import * as React from 'react';
 import { View, Text,Button, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 
+// tutaj importuje sobie ProgressSteps oraz ProgressStep i wykorzstuje go do stworzenia Step Progress Bara
 export default function StepProgressBar({ navigation }) {
   const B = (props) => <Text style={{fontWeight: 'bold',color:'#19A3E1'}}>{props.children}</Text>
   return (
     <View style={{flex: 1}}>
     <ProgressSteps>
         <ProgressStep label="First Step">
+            // Tutaj we View'sie tworze sobie ActivityActivator
             <View style={{ alignItems: 'center' }}>
             <Text style={{fontFamily:'Roboto-Medium',paddingVertical:'2.5%',fontSize:20,textAlign:'center'}}><B>Witaj na ekranie nr 1 :)</B></Text>
                 <ActivityIndicator size="large" color="#4bb543" />
             </View>
         </ProgressStep>
         <ProgressStep label="Second Step">
+             // Tutaj we View'sie tworze sobie ActivityActivator
             <View style={{ alignItems: 'center' }}>
             <Text style={{fontFamily:'Roboto-Medium',paddingVertical:'2.5%',fontSize:20,textAlign:'center'}}><B>Witaj na ekranie nr 2 :)</B></Text>
                 <ActivityIndicator 
@@ -338,8 +351,9 @@ export default function StepProgressBar({ navigation }) {
         >
             <View style={{ alignItems: 'center' }}>
                 <Text style={{fontFamily:'Roboto-Medium',fontSize:16}}>Witaj na ekranie nr 3 :) tutaj kończy się progress Bar</Text>
-                <Text style={{fontFamily:'Roboto-Medium',paddingVertical:'2.5%',fontSize:20,textAlign:'center'}}><B>Naciśnij Return Home w celu powrotu do menu głównego</B></Text>
+                <Text style={{fontFamily:'Roboto-Medium',paddingVertical:'2.5%',fontSize:20,textAlign:'center'}}><B>Naciśnij Return Home w celu powrotu do menu głównego</B>      </Text>
             </View>
+            // Tutaj we View'sie tworze sobie ActivityActivator
             <View>
                 <ActivityIndicator 
                   color = '#f0f'
@@ -370,6 +384,7 @@ export const options ={
 ```js
 import {StyleSheet} from 'react-native';
 
+// style dla menu głównego
 const stylesHome = StyleSheet.create({
     containerCol: {
       flex: 1,
@@ -397,6 +412,7 @@ const stylesHome = StyleSheet.create({
     }
 })
 
+//style dla listy pseudolosowych liczb
 export const listStyles = StyleSheet.create({
   container: {
     flex: 8,

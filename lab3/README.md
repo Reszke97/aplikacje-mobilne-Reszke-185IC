@@ -16,7 +16,7 @@ Struktura plików:
     │     ├── LazyLoading.js
     │     ├── SortFilter.js
     │     ├── StackNavRightHeader.js
-    │     └── StackScreen.js
+    │     ├── StackScreen.js
     |     └── StepProgressBar.js
     └── /static
           └── styles.js

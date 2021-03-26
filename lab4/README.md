@@ -498,6 +498,29 @@ class ToastScreen extends Component {
 ## Tak przedstawia się Select po wybraniu obydwu opcji z listy:
 ![](5)
 
-## Tak przedstawia się SwitchComponent
+## Tak przedstawia się SwitchComponent przed wyświetleniem pseudolosowej liczby:
+![](6)
 
-## Tak przedstawia się
+## Tak przedstawia się SwitchComponent po wyświetleniu pseudolosowej liczby:
+![](7)
+
+## Tak przedstawia się DateTime przed wyborem daty i godziny:
+![](8)
+
+## Tak przedstawia się DateTime po kliknięciu buttona z datą:
+![](9)
+
+## Tak przedstawia się DateTime po wyborze daty:
+![](10)
+
+## Tak przedstawia się DateTime po kliknięciu buttona z godziną:
+![](11)
+
+## Tak przedstawia się DateTime po Wyborze godziny:
+![](12)
+
+## Tak przedstawia się Toast przed kliknięciem guzika:
+![](13)
+
+## Tak przedstawia się Toast po kliknięciu w buttona:
+![](14)

@@ -481,3 +481,23 @@ class ToastScreen extends Component {
   }
 }
 ```
+# Widoki:
+
+## Tak przedstawia się bazowy ekranu:
+![](1)
+
+## Tak przedstawiają się TextInputy:
+![](2)
+
+## Tak przedstawia się Select po kliknięciu w Color:
+![](3)
+
+## Tak przedstawia się Select po kliknięciu w Car:
+![](4)
+
+## Tak przedstawia się Select po wybraniu obydwu opcji z listy:
+![](5)
+
+## Tak przedstawia się SwitchComponent
+
+## Tak przedstawia się

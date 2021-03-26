@@ -134,8 +134,8 @@ export default({navigation}) => ({ // get reference to navigation
 })
 ```
 
-## Tak przedstawia się plik TextInput(wykorzystane opcje TextInputa: TextInput z wartością na starcie, 
-placeholder,value nie do zmiany(ustawione na sztywno),możliwość dodawania tylko liczb,multilinie,limit tekstu  ):
+## Tak przedstawia się plik TextInput(wykorzystane opcje TextInputa: TextInput z wartością na starcie) 
+## (placeholder,value nie do zmiany(ustawione na sztywno),możliwość dodawania tylko liczb,multilinie,limit tekstu  ):
 ```js
 import React, {Suspense} from 'react';
 import { View, Text,Button, TouchableOpacity, TextInput, SafeAreaView, StyleSheet, ScrollView } from 'react-native';

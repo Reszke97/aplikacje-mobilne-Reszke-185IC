@@ -484,43 +484,43 @@ class ToastScreen extends Component {
 # Widoki:
 
 ## Tak przedstawia się bazowy ekranu:
-![](1)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/1.PNG)
 
 ## Tak przedstawiają się TextInputy:
-![](2)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/2.PNG)
 
 ## Tak przedstawia się Select po kliknięciu w Color:
-![](3)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/3.PNG)
 
 ## Tak przedstawia się Select po kliknięciu w Car:
-![](4)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/4.PNG)
 
 ## Tak przedstawia się Select po wybraniu obydwu opcji z listy:
-![](5)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/5.PNG)
 
 ## Tak przedstawia się SwitchComponent przed wyświetleniem pseudolosowej liczby:
-![](6)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/6.PNG)
 
 ## Tak przedstawia się SwitchComponent po wyświetleniu pseudolosowej liczby:
-![](7)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/7.PNG)
 
 ## Tak przedstawia się DateTime przed wyborem daty i godziny:
-![](8)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/8.PNG)
 
 ## Tak przedstawia się DateTime po kliknięciu buttona z datą:
-![](9)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/9.PNG)
 
 ## Tak przedstawia się DateTime po wyborze daty:
-![](10)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/10.PNG)
 
 ## Tak przedstawia się DateTime po kliknięciu buttona z godziną:
-![](11)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/11.PNG)
 
 ## Tak przedstawia się DateTime po Wyborze godziny:
-![](12)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/12.PNG)
 
 ## Tak przedstawia się Toast przed kliknięciem guzika:
-![](13)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/13.PNG)
 
 ## Tak przedstawia się Toast po kliknięciu w buttona:
-![](14)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/14.PNG)

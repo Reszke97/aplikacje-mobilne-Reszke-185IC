@@ -650,13 +650,19 @@ class Example3 extends Component {
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/2.PNG)
 
 ## Tak przedstawiaja się ScrollView1:
-![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/1.png)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/6.png)
 
 ## Tak przedstawiaja się ScrollView2:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/3.png)
 
 ## Tak przedstawia OpacityHighlight:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/7.PNG)
+
+## Tak przedstawia się działanie tego ekranu:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/Touchable%20Opacity%20and%20TouchableHighlight.gif)
 
 ## Tak przedstawia się Swipeable:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/8.PNG)
+
+## Tak wygląda działanie ekranu Swipeable
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/Swipeable.gif)

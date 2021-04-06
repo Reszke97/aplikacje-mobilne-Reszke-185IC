@@ -643,3 +643,47 @@ class Example3 extends Component {
   }
 }
 ```
+
+# Widoki:
+
+## Tak przedstawia się bazowy widok ekranu:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/2.PNG)
+
+## Tak przedstawiaja się ScrollView1:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/1.png)
+
+## Tak przedstawiaja się ScrollView2:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab5/zrzuty/3.png)
+
+## Tak przedstawia się Select po kliknięciu w Car:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/4.PNG)
+
+## Tak przedstawia się Select po wybraniu obydwu opcji z listy:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/5.PNG)
+
+## Tak przedstawia się SwitchComponent przed wyświetleniem pseudolosowej liczby:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/6.PNG)
+
+## Tak przedstawia się SwitchComponent po wyświetleniu pseudolosowej liczby:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/7.PNG)
+
+## Tak przedstawia się DateTime przed wyborem daty i godziny:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/8.PNG)
+
+## Tak przedstawia się DateTime po kliknięciu buttona z datą:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/9.PNG)
+
+## Tak przedstawia się DateTime po wyborze daty:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/10.PNG)
+
+## Tak przedstawia się DateTime po kliknięciu buttona z godziną:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/11.PNG)
+
+## Tak przedstawia się DateTime po Wyborze godziny:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/12.PNG)
+
+## Tak przedstawia się Toast przed kliknięciem guzika:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/13.PNG)
+
+## Tak przedstawia się Toast po kliknięciu w buttona:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab4/zrzuty/14.PNG)

@@ -571,7 +571,7 @@ export default function Swipe() {
   }
 }
 ```
-## Komponent DetectConnection uaktalnia się sam dzięki ```event.listener'owi(onNetworkChange)``` dzięki pakietowi NetInfo i wygląda tak gdy mamy dostęp do sieci:
+## Komponent DetectConnection uaktalnia się sam dzięki **event.listener'owi** nasłuchującemu zmiany w połączeniu, dzięki pakietowi NetInfo i wygląda tak gdy mamy dostęp do sieci:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/6.PNG)
 
 ## Tak wygląda gdy nie mamy dostępu do sieci:
@@ -655,10 +655,11 @@ class AsyncStorageScreen extends Component {
                     <View >
                         <Text style={{padding:'2%',fontSize:20}}><B>Podaj wartość do zapisania</B></Text>
                         <View style={AsyncStor.itemContainer}>
-                            <TextInput placeholderTextColor="white" style={AsyncStor.input} onEndEditing={event =>{this.setState({key: event.nativeEvent.text})}} placeholder="Podaj klucz"/>
+                            <TextInput placeholderTextColor="white" style={AsyncStor.input} onEndEditing={event =>{this.setState({key: event.nativeEvent.text})}}       placeholder="Podaj klucz"
+                            />
                         </View>
                         <View style={AsyncStor.itemContainer}>
-                            <TextInput placeholderTextColor="white" style={AsyncStor.input} onEndEditing={event =>{this.setState({value: event.nativeEvent.text})}} placeholder="Wpisz wartość" />
+                            <TextInput placeholderTextColor="white" style={AsyncStor.input} onEndEditing={event =>{this.setState({value: event.nativeEvent.text})}}  placeholder="Wpisz wartość" />
                         </View>
                         <View style={{flexDirection:'row',paddingVertical:'2%'}}>
                             <TouchableOpacity onPress={this.storeData} style={AsyncStor.button}>
@@ -683,3 +684,205 @@ class AsyncStorageScreen extends Component {
     };
 }
 ```
+## Tak wygląda widok ekranu AsyncStorage(są tam 2 inputy pobierające wartość i ładujące je do local storage, oraz 3 guziki opisane na ekranie):
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/8.PNG)
+
+## Gdy dodamy klucz i wartość do tekstu to wygląda tak:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/9.PNG)
+
+## Ostatni ekran czyli synchronizacja plików offline i online. Zostały tam utworzone dane "do symulacji" danych sieci i przedstawiające mechanizm gdybyśmy wykorzystywali API.
+W skrócie komponent **Store** odpowiada za całą logikę związaną z pobieraniem i zapisywaniem danych dzięki wykorzystaniu event listener'a od NetInfo nasłuchującego zmiany w połaczeniu oraz ich synchronizacją po wyjściu z trybu offline przy użyciu AsyncStorage. Komponent Synchronization renderuje i wykorzystuje logikę z komponenty **Store**. 
+Posiada 3 Switche, po kliknięciu których zapisywane są dane.
+
+## Tak przedstawia się kod do komponentu **Store**:
+```js
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import NetInfo from "@react-native-community/netinfo";
+
+// Ten komponent tworzy tak jabky "symulacje(fake)" danych sieci za pomocą obiektu fakeNetworkData
+const fakeNetworkData = {
+  first: false,
+  second: false,
+  third: false
+};
+
+let connected = false;
+
+// pod tablicą unsynced przechowywane będą dane czekające na zsynchronizowanie po tym jak
+// połączymy się z internetem
+const unsynced = [];
+
+
+// Funkcja działa na takiej zasadzie ze przekaywane są do niej pary: Klucz i Wartość
+// Jeśli mamy dostęp do internetu to dane (zostałyby przekazane i zapisane za pomocą internetu)
+// Jeśli brak dostępu do internetu to dane zostaną zapisane lokalnie za pomocą AsyncStorage
+export function set(key, value) {
+  return new Promise((resolve, reject) => {
+    if (connected) {
+      // jeśli jesteśmy połączeni to mapujemy z klucza do naszego obiektu fakeNetworkData wartość za pomocą promise'ów
+      fakeNetworkData[key] = value;
+      resolve(true);
+    } else {
+      // brak połączenia oznacza zapisanie danych do AsyncStorage
+      AsyncStorage.setItem(key, value.toString()).then(
+        () => {
+          //Dodajemy dane do tablicy niezsynchronizowanych danych
+          unsynced.push(key);
+          resolve(false);
+        },
+        err => reject(err)
+      );
+    }
+  });
+}
+
+// Tak jak w przypadku dla metody set jeśli jesteśmy połączeni to wartość zostanie pobrana z internetu(prawdopodobnie z API)
+// W przeciwnym razie korzystamy z AsyncStorage do pobrania danych
+export function get(key) {
+  return new Promise((resolve, reject) => {
+    if (connected) {
+      // jeśli podano klucz to zostanie zwrócony element znajdujący się pod tym kluczem
+      // w przeciwnym razie zwrócone zostaną wszystkie wartości
+      resolve(key ? fakeNetworkData[key] : fakeNetworkData);
+      // jeśli nie mamy dostępu do sieci to ale podaliśmy klucz to ten element zostanie
+      // zwrócony z AsyncStorage
+    } else if (key) {
+      AsyncStorage.getItem(key).then(
+        item => resolve(item),
+        err => reject(err)
+      );
+      // jeśli nie mamy dostępu do sieci oraz nie podaliśmy klucza to zwrócone zostaną
+      // wszystkie wartości
+    } else {
+      AsyncStorage.getAllKeys().then(
+        keys =>
+          AsyncStorage.multiGet(keys).then(
+            items => resolve(Object.fromEntries(items)),
+            err => reject(err)
+          ),
+        err => reject(err)
+      );
+    }
+  });
+}
+
+// Ta funkcja odpowiada za ustawienie zmiennej connected na dostęp do sieci lub brak dostępu
+NetInfo.fetch().then(
+  connection => {
+    connected = ["wifi", "unknown"].includes(connection.type);
+  },
+  () => {
+    connected = false;
+  }
+);
+
+// Ten event listener odpowiada za automatyczną zmianę połączenia i jeśli jesteśmy połączeni
+// i mamy jakieś niezsynchronizowane elementy to tutaj właśnie zostanie to wykonane poprzez
+// wywołanie metody set() a wcześniej pobranie danych z AsyncStorage i po synchronizacji
+// usunie dane z tablicy unsynced
+NetInfo.addEventListener(connection => {
+  connected = ["wifi", "unknown"].includes(connection.type);
+
+  if (connected && unsynced.length) {
+    AsyncStorage.multiGet(unsynced).then(items => {
+      items.forEach(([key, val]) => set(key, val));
+      unsynced.length = 0;
+    });
+  }
+});
+```
+
+## Tak przedstawia się kod do komponentu Synchronization:
+```js
+import React, { useState, useEffect } from "react";
+import { View, Text,Button, TouchableOpacity, TextInput, SafeAreaView, StyleSheet, ScrollView, Image,Switch } from 'react-native';
+import {SynchStyles} from '../static/styles.js';
+import { useNavigation } from '@react-navigation/native';
+import NetInfo from "@react-native-community/netinfo";
+import { set, get } from "./store";
+
+const B = (props) => <Text style={{fontWeight: 'bold',color:'black'}}>{props.children}</Text>
+
+const boolMap = {
+    true: true,
+    false: false
+};
+
+export default function Synchronization() {
+    const [message, setMessage] = useState(null);
+    const [first, setFirst] = useState(false);
+    const [second, setSecond] = useState(false);
+    const [third, setThird] = useState(false);
+    const setters = new Map([
+      ["first", setFirst],
+      ["second", setSecond],
+      ["third", setThird]
+    ]);
+  
+    // funkcja save zapisuje wartości (do API) a następnie pobiera je (z API) i zapisuje do obiektu setters
+    function save(key) {
+      return value => {
+        set(key, value).then(
+          connected => {
+            setters.get(key)(value);
+            setMessage(connected ? "Saved Online" : "Saved Offline");
+          },
+          err => {
+            setMessage(err);
+          }
+        );
+      };
+    }
+    
+    //useEffect inicjuje informacje o sieci, oraz pobiera(z API) dane do obiektu setters
+    useEffect(() => {
+      NetInfo.fetch().then(() =>
+        get().then(
+          items => {
+            for (let [key, value] of Object.entries(items)) {
+              setters.get(key)(value);
+            }
+          },
+          err => {
+            setMessage(err);
+          }
+        )
+      );
+    }, []);
+  
+    return (
+      <View style={SynchStyles.container}>
+        <Text>{message}</Text>
+        <View>
+          <Text>First</Text>
+          <Switch
+            value={boolMap[first.toString()]}
+            onValueChange={save("first")}
+          />
+        </View>
+        <View>
+          <Text>Second</Text>
+          <Switch
+            value={boolMap[second.toString()]}
+            onValueChange={save("second")}
+          />
+        </View>
+        <View>
+          <Text>Third</Text>
+          <Switch
+            value={boolMap[third.toString()]}
+            onValueChange={save("third")}
+          />
+        </View>
+      </View>
+    );
+}
+```
+## Tak wygląda ekran od razu po wyrenderowaniu:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/10.PNG)
+
+## Tak wygląda ekran gdy jesteśmy podłączeni do sieci i klikniemy na switch(pojawia się nam wiadomość informująca że zapisaliśmy dane bedąc online):
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/11.PNG)
+
+## Tak wygląda ekran gdy jesteśmy odłączeni od sieci i klikniemy na switch(pojawia się nam wiadomość informująca że zapisaliśmy dane bedąc offline):
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab6/zrzuty/12.PNG)

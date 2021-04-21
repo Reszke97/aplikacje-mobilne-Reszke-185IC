@@ -880,4 +880,4 @@ export default DeleteUser;
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/10.PNG)
 
 ## Tak przedstawia się ekran **ViewAll** po usunięciu danych wcześniej dodanych:
-![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/12.PNG)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/11.PNG)

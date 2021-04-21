@@ -806,8 +806,11 @@ const ViewUser = () => {
 export default ViewUser;
 ```
 
-## Tak przedstawia się ekran **ViewUser** :
-![](12)
+## Tak przedstawia się ekran **ViewUser** po wczytaniu :
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/12.PNG)
+
+## Tak przedstawia się ekran **ViewUser** po wybraniu ID:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/14.PNG)
 
 ## Tak przedstawia się plik DeleteUser(Usuwanie użytkownika. Pobranie Id i wywołanie Zapytania DELETE FROM table_user where user_id ={inputValue}):
 ```js
@@ -871,7 +874,7 @@ export default DeleteUser;
 ```
 
 ## Tak przedstawia się ekran **DeleteUser** bezpośrednio bo załadowaniu:
-![](13)
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/13.PNG)
 
 ## Tak przedstawia się ekran **DeleteUser** po poprawnym usunięciu z rekordu z bazy danych:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/10.PNG)

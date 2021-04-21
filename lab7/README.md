@@ -28,4 +28,9 @@ Struktura plików:
    app.js
 ```
 
-## Słowem wstępu aplikacja napisana jest w **React Native-Cli** z wykorzystaniem bazy danych **SQLlite** przy użyciu modułu ```import { openDatabase } from 'react-native-sqlite-storage'```
+## Słowem wstępu aplikacja napisana jest w **React Native-Cli** z wykorzystaniem bazy danych **SQLlite** przy użyciu modułu ```import { openDatabase } from 'react-native-sqlite-storage'```. Baza danych tworzona jest w momencie uruchomienia, logika zdefiniowana jest w pliku **HomeScreen** czyli od razu gdy włączamy aplikacje i wyświetla nam się Ekran główny. Następnie baza danych jest gotowa do wykonwywania na niej operacji tj. usuwanie, dodawanie, edytowanie.
+
+## Tak przedstawia się plik **styles.js**
+```js
+
+```

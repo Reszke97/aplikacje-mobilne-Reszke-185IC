@@ -388,6 +388,7 @@ const ViewAllUser = () => {
   useEffect(() => {
     db.transaction((tx) => {
       tx.executeSql(
+        //zapytanie select bez danych z poziomu kodu do zapytania SQL
         'SELECT * FROM table_user',
         [],
         (tx, results) => {
@@ -452,7 +453,7 @@ export default ViewAllUser;
 ## Tak przedstawia się ekran ViewAllUser gdy w bazie danych nie ma rekordów:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/2.PNG)
 
-## Tak wygląda komponent RegisterUser.js(Najpierw użytkownik musi podać dane do input'ów, po podaniu danych od razy wykonywany jest setState. Jeśli chcemy przekazać dane z input'ów do bazy należy przesłać je za pomocą buttona. Button zawiera funkcję strzałkową onClick register_user wykonuje się zapytanie SQL jeśli dane w inputach są poprawne):
+## Tak wygląda komponent **RegisterUser.js** (Najpierw użytkownik musi podać dane do input'ów, po podaniu danych od razy wykonywany jest setState. Jeśli chcemy przekazać dane z input'ów do bazy należy przesłać je za pomocą buttona. Button zawiera funkcję strzałkową onClick register_user wykonuje się zapytanie SQL jeśli dane w inputach są poprawne):
 ```js
 import React, { useState } from 'react';
 import {
@@ -560,3 +561,183 @@ const RegisterUser = ({ navigation }) => {
 };
 export default RegisterUser;
 ```
+
+## Tak przedstawia się wygląd ekranu RegisterUser po uruchomieniu:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/3.PNG)
+
+## Tak wygląda po poprawnym dodaniu użytkownika:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/4.PNG)
+
+## Tak przedstawia się Plik **UpdateUser** (Po podaniu danych do inputa z id wywołana jest funkcja strzałkowa, która pobiera dane po wskazanym id z inputa i zwraca nam je do zmiennych po setState'cie i wyświetla na ekran. Po czym możemy edytować danę i przekazać je do bazy danych za pomocą guzika UpdateUser z funkcją onClick = updateUser):
+```js
+import React, { useState } from 'react';
+import {
+  View,
+  ScrollView,
+  KeyboardAvoidingView,
+  Alert,
+  SafeAreaView,
+  Text,
+} from 'react-native';
+import Mytextinput from './components/Mytextinput';
+import Mybutton from './components/Mybutton';
+import { openDatabase } from 'react-native-sqlite-storage';
+import { defaultBG } from './styles'
+
+var db = openDatabase({ name: 'UserDatabase.db' });
+
+const UpdateUser = ({ navigation }) => {
+  let [inputUserId, setInputUserId] = useState('');
+  let [userName, setUserName] = useState('');
+  let [userContact, setUserContact] = useState('');
+  let [userAddress, setUserAddress] = useState('');
+
+  let updateAllStates = (name, contact, address) => {
+    setUserName(name);
+    setUserContact(contact);
+    setUserAddress(address);
+  };
+  
+  
+  // Wykonanie funkcji strzałkowej która pobiera dane po wskazanym id z inputa
+  let searchUser = () => {
+    console.log(inputUserId);
+    db.transaction((tx) => {
+      tx.executeSql(
+        'SELECT * FROM table_user where user_id = ?',
+        [inputUserId],
+        (tx, results) => {
+          var len = results.rows.length;
+          if (len > 0) {
+            let res = results.rows.item(0);
+            updateAllStates(
+              res.user_name,
+              res.user_contact,
+              res.user_address
+            );
+          } else {
+            alert('No user found');
+            updateAllStates('', '', '');
+          }
+        }
+      );
+    });
+  };
+  let updateUser = () => {
+    console.log(inputUserId, userName, userContact, userAddress);
+
+    if (!inputUserId) {
+      alert('Please fill User id');
+      return;
+    }
+    if (!userName) {
+      alert('Please fill name');
+      return;
+    }
+    if (!userContact) {
+      alert('Please fill Contact Number');
+      return;
+    }
+    if (!userAddress) {
+      alert('Please fill Address');
+      return;
+    }
+    
+    // Wykonanie Update do bazy danych
+    db.transaction((tx) => {
+      tx.executeSql(
+        'UPDATE table_user set user_name=?, user_contact=? , user_address=? where user_id=?',
+        [userName, userContact, userAddress, inputUserId],
+        (tx, results) => {
+          console.log('Results', results.rowsAffected);
+          if (results.rowsAffected > 0) {
+            Alert.alert(
+              'Success',
+              'User updated successfully',
+              [
+                {
+                  text: 'Ok',
+                  onPress: () => navigation.navigate('HomeScreen'),
+                },
+              ],
+              { cancelable: false }
+            );
+          } else alert('Updation Failed');
+        }
+      );
+    });
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={[defaultBG.bg,{flex:1}]}>
+        <View style={{ flex: 1 }}>
+          <ScrollView keyboardShouldPersistTaps="handled">
+            <KeyboardAvoidingView
+              behavior="padding"
+              style={{ flex: 1, justifyContent: 'space-between' }}>
+              <Mytextinput
+                placeholder="Enter User Id"
+                style={{ padding: 10 }}
+                onChangeText={
+                  (inputUserId) => setInputUserId(inputUserId)
+                }
+              />
+              <Mybutton
+                title="Search User"
+                customClick={searchUser} 
+              />
+              <Mytextinput
+                placeholder="Enter Name"
+                value={userName}
+                style={{ padding: 10 }}
+                onChangeText={
+                  (userName) => setUserName(userName)
+                }
+              />
+              <Mytextinput
+                placeholder="Enter Contact No"
+                value={'' + userContact}
+                onChangeText={
+                  (userContact) => setUserContact(userContact)
+                }
+                maxLength={10}
+                style={{ padding: 10 }}
+                keyboardType="numeric"
+              />
+              <Mytextinput
+                value={userAddress}
+                placeholder="Enter Address"
+                onChangeText={
+                  (userAddress) => setUserAddress(userAddress)
+                }
+                maxLength={225}
+                numberOfLines={5}
+                multiline={true}
+                style={{ textAlignVertical: 'top', padding: 10 }}
+              />
+              <Mybutton
+                title="Update User"
+                customClick={updateUser}
+              />
+            </KeyboardAvoidingView>
+          </ScrollView>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default UpdateUser;
+```
+
+## Tak przedstawia się ekran **UpdateUser** bezpośrednio po wczytaniu:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/5.PNG)
+
+## Tak przedstawia się ekran **UpdateUser** gdy wybraliśmy poprawne id:
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/6.PNG)
+
+## Tak wygląda ekran **UpdateUser** po update'cie :
+![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/7.PNG)
+
+

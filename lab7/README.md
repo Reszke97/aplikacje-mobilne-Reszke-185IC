@@ -7,6 +7,7 @@
 - View
 - View All
 - Delete
+- Register
 
 Struktura plików:
 ```js

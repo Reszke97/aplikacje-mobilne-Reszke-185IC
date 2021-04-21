@@ -27,3 +27,5 @@ Struktura plików:
     └── ViewUser.js                                 //plik wyświetlający wybranego user'a
    app.js
 ```
+
+## Słowem wstępu aplikacja napisana jest w **React Native-Cli** z wykorzystaniem bazy danych **SQLlite** przy użyciu modułu ```import { openDatabase } from 'react-native-sqlite-storage'```

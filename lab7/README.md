@@ -372,7 +372,7 @@ export const options ={
 ## Wygląd ekranu głównego:
 ![](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/blob/master/lab7/zrzuty/1.PNG)
 
-## Wyświetlenie wszystkich rekordów z bazy danych z tabeli **table_user** plik ViewAllUser.js(Najpierw w UseStatcie pobieramy dane i przypisujemy je do zmiennej za pomocą setState, po czym renderowana jest lista, której parametrem wejściowym jest zwrócona wartość w zmiennej z use State'a. Po tym renderowana jest lista elementów poprzez wywołanie zdefiniowanej funkcji strzałkowej **listItemView** ):
+## Wyświetlenie wszystkich rekordów z bazy danych z tabeli **table_user** plik ViewAllUser.js(Najpierw w UseEffecie pobieramy dane i przypisujemy je do zmiennej za pomocą setState, po czym renderowana jest lista, której parametrem wejściowym jest zwrócona wartość w zmiennej z use State'a. Po tym renderowana jest lista elementów poprzez wywołanie zdefiniowanej funkcji strzałkowej **listItemView** ):
 ```js
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View, SafeAreaView } from 'react-native';

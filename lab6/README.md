@@ -29,7 +29,7 @@ Struktura plików:
    app.js
 ```
 
-## Przy wykorzystaniu React-Native Cli należy zmodyfikować plik MainApplication.java znajdujący się w <<appnameRootDirectory>>/android/app/src/main/java/com/<<appName>>/MainApplication.java aby wyglądał tak:
+## Przy wykorzystaniu React-Native Cli należy zmodyfikować plik MainApplication.java znajdujący się w (appnameRootDirectory)/android/app/src/main/java/com/(appName)/MainApplication.java aby wyglądał tak:
 ```java
 package com.awesomeproject;
 

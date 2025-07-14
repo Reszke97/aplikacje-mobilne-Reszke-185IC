@@ -1,3 +1,7 @@
+# Lab 1 – Calculator
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
+
 # Aplikacja napisana w React-CLI
 ## Do przygotowania React-CLI wykorzystałem stronę https://reactnative.dev/docs/environment-setup. Dodatkowo zainstalowałem Android Studio do korzystania z emulatora na system android. Po skonfigurowaniu Z dokumentacji react-native należało również doinstalować **Java JDK** oraz podać utowrzyć zmienną środowiskową **JAVA_HOME** zazwyczaj jest to następująca scieżka: **C:\Program Files\Java\jdk-15.0.2**. Oraz dodatkowo https://stackoverflow.com/questions/35000729/android-studio-could-not-initialize-class-org-codehaus-groovy-runtime-invokerhel zmienić opcje w **gradle/wrapper/gradle-wrapper.properties.** na **distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-all.zip**.
 

@@ -19,7 +19,7 @@ A student mobile application built with React Native to demonstrate navigation a
 
 Each folder contains code, descriptions, and screenshots:
 
-- [🔗 Lab 1 – Login screen with local state](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab1)
+- [🔗 Lab 1 – Login screen with local state](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab1/Kalkulator%20CLI/kalkulator)
 - [🔗 Lab 2 – Multi-screen navigation](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab2)
 - [🔗 Lab 3 – List rendering and styling](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab3)
 - [🔗 Lab 4 – AsyncStorage and persistent data](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/master/lab4)

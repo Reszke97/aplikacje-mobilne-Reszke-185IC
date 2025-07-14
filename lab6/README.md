@@ -1,5 +1,6 @@
-# Aplikacje mobilne React-Native
-## Lab. nr 6 - obsługa obrazów + tryb offline
+# Lab 6 – Image handling + offline mode.
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem w sumie 7 ekranów:
 - HomeScreen

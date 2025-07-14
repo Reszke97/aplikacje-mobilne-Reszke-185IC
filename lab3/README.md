@@ -1,5 +1,6 @@
-# Aplikacje mobilne React-Native
-## Laboratorium nr 3 **renderowanie listy danych + obsługa progresu**
+# Lab 3 – Renderowanie listy danych + obsługa progresu
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem w sumie 6 ekranów
 - HomeScreen

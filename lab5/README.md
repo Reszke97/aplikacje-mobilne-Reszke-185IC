@@ -1,5 +1,6 @@
-# Aplikacje mobilne React-Native
-## Lab. nr 5 - obsługa gestów użytkownika
+# Lab 5 – User's gestures.
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem w sumie 5 ekranów:
 - HomeScreen

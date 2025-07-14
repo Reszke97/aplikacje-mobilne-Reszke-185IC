@@ -1,6 +1,6 @@
-# Aplikacje mobilne React-Native
-
-## Laboratorium nr 4 obsługa danych wprowadzanych przez użytkownika + modale
+# Lab 4 – Obsługa danych wprowadzanych przez użytkownika + modale
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem w sumie 6 ekranów:
 - HomeScreen

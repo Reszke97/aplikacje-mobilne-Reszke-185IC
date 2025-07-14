@@ -4,7 +4,7 @@ A student mobile application built with React Native to demonstrate navigation a
 
 ## 🛠️ Tech Stack
 
-- React Native
+- React Native (cli)
 - JavaScript
 - React Navigation
 - AsyncStorage lub SQLite

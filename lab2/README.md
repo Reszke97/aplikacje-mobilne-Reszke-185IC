@@ -1,5 +1,6 @@
-# Aplikacje Mobilne Android
-## Responsywne Layouty + Nawigacja
+# Lab 2 – Responsive layouts + navigation.
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem 4 ekrany Przy pomocy **React Navigation** + **Stack Navigation** o nazwie:
 

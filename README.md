@@ -14,3 +14,20 @@ A student mobile application built with React Native to demonstrate navigation a
 - Multi-screen flow (np. list + details)
 - Forms and validation
 - Persistent data storage
+
+## 📚 Laboratory Assignments
+
+Each folder contains code, descriptions, and screenshots:
+
+- [🔗 Lab 1 – Login screen with local state](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab1)
+- [🔗 Lab 2 – Multi-screen navigation](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab2)
+- [🔗 Lab 3 – List rendering and styling](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab3)
+- [🔗 Lab 4 – AsyncStorage and persistent data](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab4)
+- [🔗 Lab 5 – Scrollable views and inputs](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab5)
+- [🔗 Lab 6 – Forms, switches, checkboxes](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab6)
+- [🔗 Lab 7 – Final project (app integration)](https://github.com/Reszke97/aplikacje-mobilne-Reszke-185IC/tree/main/lab7)
+
+## 🧠 Notes
+
+- Built using Expo CLI – cross-platform (Android/iOS)
+- Educational/demo purposes only

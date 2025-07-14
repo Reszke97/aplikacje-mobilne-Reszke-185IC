@@ -1,7 +1,23 @@
-# aplikacje-mobilne-Reszke-185IC
+# 📱 Mobile App – React Native
 
-## W Podfolderze LAB1 znajduję się rozwiązane pierwsze zadanie.
+A student mobile application built with React Native to demonstrate navigation and persistent storage.
 
-## W Podfolderze LAB2 znajduję się rozwiązane drugie zadanie.
+## 🛠️ Tech Stack
 
-## W Podfolderze Lab3 znajduję się rozwiązane trzecie zadanie.
+- React Native (Expo lub bare)
+- JavaScript
+- React Navigation
+- AsyncStorage lub SQLite
+
+## 💡 Features
+
+- Multi-screen flow (np. list + details)
+- Forms and validation
+- Persistent data storage
+
+## 🚀 Setup
+
+```bash
+cd aplikacje-mobilne-Reszke-185IC
+npm install
+expo start

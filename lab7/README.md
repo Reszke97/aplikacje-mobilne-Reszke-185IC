@@ -1,5 +1,6 @@
-# Aplikacje mobilne React-Native
-## Lab. nr 7 - Wykorzystanie bazy danych w aplikacji mobilnej
+# Lab 7 – Sqlite with react native
+## Źródło
+https://zacniewski.github.io/old/tasks-mobile-apps-react-native/
 
 ## Utworzyłem w sumie 6 ekranów:
 - HomeScreen

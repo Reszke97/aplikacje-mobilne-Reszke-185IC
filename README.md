@@ -4,14 +4,14 @@ A student mobile application built with React Native to demonstrate navigation a
 
 ## 🛠️ Tech Stack
 
-- React Native (Expo lub bare)
+- React Native
 - JavaScript
 - React Navigation
 - AsyncStorage lub SQLite
 
 ## 💡 Features
 
-- Multi-screen flow (np. list + details)
+- Multi-screen flow (eg. list + details)
 - Forms and validation
 - Persistent data storage
 
